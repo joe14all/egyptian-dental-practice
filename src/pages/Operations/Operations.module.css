@@ -1,0 +1,7 @@
+/* Styles for Operations.jsx */
+
+.sectionTitle {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}

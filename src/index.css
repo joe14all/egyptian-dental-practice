@@ -1,13 +1,125 @@
-body {
+/*
+ * This is the GLOBAL stylesheet.
+ * It contains the master design tokens (colors, spacing, shadows)
+ * and global CSS resets.
+ */
+
+:root {
+  /* --- Brand Colors (Default Theme) --- */
+  /* This is your primary "Egyptian Dental" brand color */
+  --brand-blue-500: #007bff;     /* Main professional blue */
+  --brand-blue-600: #0069d9;     /* Darker shade for hover/active */
+  --brand-blue-700: #0056b3;     /* Even darker shade */
+  --brand-blue-50:  #e6f2ff;     /* Very light accent/background */
+  
+  /* --- Primary Theme (Sidebar/Nav) --- */
+  /* These are mapped from your brand for ease of use */
+  --primary-color: var(--brand-blue-500);
+  --primary-dark: #00234a;       /* Deep Navy for Sidebar */
+  --primary-light: var(--brand-blue-50);
+  --text-on-primary: #ffffff;    /* Text on dark backgrounds */
+
+  /* --- Greyscale Palette --- */
+  --grey-900: #212529;  /* Darkest grey (Primary Text) */
+  --grey-800: #343a40;
+  --grey-700: #495057;  /* Dark grey (Secondary Text) */
+  --grey-600: #6c757d;  /* Medium grey (Muted Text) */
+  --grey-500: #adb5bd;
+  --grey-400: #ced4da;  /* Light grey (Borders) */
+  --grey-300: #dee2e6;  /* Lighter grey (Borders, Dividers) */
+  --grey-200: #e9ecef;  /* Very light grey (Hover backgrounds) */
+  --grey-100: #f8f9fa;  /* Lightest grey (Page backgrounds) */
+  --grey-0:   #ffffff;  /* White */
+
+  /* --- Semantic Colors (for Status, Alerts, Charts) --- */
+  /* Danger / Red */
+  --danger-500: #dc3545;
+  --danger-100: #f8d7da;
+  --danger-text:  #721c24;
+
+  /* Success / Green */
+  --success-500: #28a745;
+  --success-100: #d4edda;
+  --success-text:  #155724;
+
+  /* Warning / Yellow-Amber */
+  --warning-500: #ffc107;
+  --warning-100: #fff3cd;
+  --warning-text:  #856404;
+
+  /* Info / Teal */
+  --info-500: #17a2b8;
+  --info-100: #d1ecf1;
+  --info-text:  #0c5460;
+
+  /* --- Secondary Accent Colors (for Charts, Tags, etc.) --- */
+  --accent-purple: #6f42c1;
+  --accent-pink:   #e83e8c;
+  --accent-orange: #fd7e14;
+  --accent-teal:   #20c997;
+  --accent-cyan:   #0dcaf0;
+
+  /* --- Neutral Surface & Text Colors --- */
+  /* These are mapped from the greyscale for clarity */
+  --surface-color: var(--grey-0);         /* Main card/modal background */
+  --surface-secondary: var(--grey-100);  /* Main page background */
+  
+  --text-primary:   var(--grey-900);     /* Main body text */
+  --text-secondary: var(--grey-700);     /* Subheadings, supporting text */
+  --text-muted:     var(--grey-600);     /* Disabled text, metadata */
+  
+  --border-color: var(--grey-300);
+  --divider-color: var(--grey-200);
+
+  /* --- Utility & Layout Variables --- */
+  --border-radius-sm: 0.25rem; /* 4px */
+  --border-radius-md: 0.5rem;  /* 8px */
+  --border-radius-lg: 1rem;    /* 16px */
+  --border-radius-pill: 50rem;
+  --border-radius-circle: 50%;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+/* --- Global CSS Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Set global background and text from our new variables */
+  background-color: var(--surface-secondary);
+  color: var(--text-primary);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Remove default list styles */
+ul, ol {
+  list-style: none;
 }
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Basic heading reset */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+

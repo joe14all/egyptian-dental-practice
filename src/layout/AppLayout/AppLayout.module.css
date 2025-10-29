@@ -1,0 +1,45 @@
+/*
+ * This file is perfect. The logic here correctly
+ * controls the width of the grid columns.
+ * No changes were needed.
+ */
+.appContainer {
+  display: grid;
+  /* We define a variable '--sidebar-width' */
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  height: 100vh;
+  /* This is the only transition we need! */
+  transition: grid-template-columns 0.3s ease;
+}
+
+/* Define the width for each state */
+.appContainer.sidebarCollapsed {
+  --sidebar-width: 80px; /* Width for icons only */
+}
+
+.appContainer.sidebarExpanded {
+  --sidebar-width: 240px; /* Full original width */
+}
+
+/* --- Area definitions (unchanged) --- */
+.sidebarArea {
+  grid-area: sidebar;
+  /* This ensures the sidebar, which is position: sticky,
+     doesn't overflow the grid area */
+  overflow: hidden; 
+}
+
+.headerArea {
+  grid-area: header;
+}
+
+.mainContent {
+  grid-area: main;
+  overflow-y: auto; /* Allow content to scroll */
+  background-color: var(--surface-secondary);
+}
+

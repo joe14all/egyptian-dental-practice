@@ -1,0 +1,13 @@
+.infoBox {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--primary-lightest);
+  border: 1px solid var(--primary-light);
+  border-radius: var(--border-radius-lg);
+  color: var(--primary-dark);
+}
+
+.infoTitle {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}

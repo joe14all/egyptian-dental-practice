@@ -1,0 +1,39 @@
+/* Wrapper to allow horizontal scrolling on small screens */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius-lg);
+}
+
+.sheetTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sheetTable th,
+.sheetTable td {
+  border: 1px solid var(--surface-border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  white-space: nowrap; /* Prevents line breaking */
+  font-size: 0.875rem;
+}
+
+.sheetTable th {
+  background-color: var(--surface-secondary);
+  color: var(--text-primary);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.sheetTable td {
+  background-color: var(--surface-primary);
+  color: var(--text-secondary);
+}
+
+.sheetTable tbody tr:hover td {
+  background-color: var(--surface-highlight);
+}

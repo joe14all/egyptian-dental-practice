@@ -1,0 +1,51 @@
+/* Styles for the tab navigation, based on your mockup */
+
+.tabContainer {
+  width: 100%;
+  background-color: var(--surface-secondary);
+  border-bottom: 2px solid var(--surface-border);
+  margin-bottom: 2rem;
+}
+
+.tabNav {
+  display: flex;
+  overflow-x: auto; /* Allows tabs to scroll horizontally on mobile */
+  /* Hide scrollbar */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.tabNav::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.tabButton {
+  padding: 0.75rem 1rem;
+  margin: 0 0.25rem;
+  border-bottom: 3px solid transparent;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  transition: all 0.2s ease;
+}
+
+.tabButton:hover {
+  color: var(--text-primary);
+  background-color: var(--surface-highlight);
+}
+
+.tabButton.tabActive {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  font-weight: 600;
+}
+
+.tabContent {
+  /* The padding is already handled by 'page-content' */
+}
+

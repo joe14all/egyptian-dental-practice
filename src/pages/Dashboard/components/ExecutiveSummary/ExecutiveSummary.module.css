@@ -1,0 +1,35 @@
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--surface-border);
+  padding-bottom: 0.5rem;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Progress Bar Styles */
+.progressBarContainer {
+  width: 100%;
+  background-color: var(--surface-border);
+  border-radius: var(--border-radius-pill);
+  height: 0.5rem; /* 8px */
+  margin-top: 0.75rem;
+  overflow: hidden;
+}
+
+.progressBar {
+  background-color: var(--primary-color);
+  height: 100%;
+  border-radius: var(--border-radius-pill);
+  transition: width 0.5s ease-in-out;
+}

@@ -1,0 +1,37 @@
+/* Styles based on your mockup's .kpi-tile */
+.kpiTile {
+  /* .card from App.css will handle background, border, shadow */
+  padding: 1.5rem;
+}
+
+.kpiTitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.kpiValue {
+  color: var(--text-primary);
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700;
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+.kpiVariance {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+/* Color utilities */
+.textGreen { 
+  color: var(--success-500); 
+}
+.textRed { 
+  color: var(--danger-500); 
+}
+.textYellow { 
+  color: var(--warning-500); 
+}

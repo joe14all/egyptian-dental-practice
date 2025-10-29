@@ -1,0 +1,9 @@
+/* Styles for Finance.jsx */
+
+.sectionTitle {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}

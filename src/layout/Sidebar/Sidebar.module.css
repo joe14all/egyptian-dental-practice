@@ -1,0 +1,110 @@
+/*
+ * Styles for the Sidebar component (FIXED)
+ */
+
+.sidebar {
+  background-color: var(--primary-dark);
+  color: var(--text-on-primary);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  overflow-x: hidden;
+  
+  /* * FIX 1: Set width to 100% to fill the parent grid cell.
+   * The grid (AppLayout.module.css) handles the actual width.
+   */
+  width: 100%;
+  
+  /* * FIX 2: Remove the 'width' transition.
+   * The parent grid's 'grid-template-columns' transition
+   * is all we need and prevents a double-animation.
+   */
+}
+
+.sidebarHeader {
+  /* * FIX 3: Set exact padding for centering.
+   * Collapsed width is 80px. Icon is 24px.
+   * (80px - 24px) / 2 = 28px.
+   * We set left/right padding to 28px.
+   */
+  padding: 1.5rem 28px; /* 24px top/bottom, 28px left/right */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  white-space: nowrap; 
+}
+
+.logoIcon {
+  /* * FIX 4: Make logo icon same size as nav icons
+   * for consistent alignment.
+   */
+  font-size: 1.5rem; /* 24px */
+  color: var(--grey-0);
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-on-primary);
+  margin-left: 0.75rem; /* 12px */
+  opacity: 1;
+  /* This transition handles the text fade */
+  transition: opacity 0.2s 0.1s ease;
+}
+
+.sidebarNav {
+  flex-grow: 1;
+  padding: 1rem 0;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  /* FIX 5: Same padding as header for perfect alignment */
+  padding: 0.75rem 28px; /* 12px top/bottom, 28px left/right */
+  color: var(--primary-light);
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--text-on-primary);
+}
+
+.navLink.active {
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+}
+
+.icon {
+  font-size: 1.5rem; /* 24px */
+  flex-shrink: 0;
+}
+
+.navText {
+  margin-left: 1rem; /* 16px */
+  font-size: 0.95rem;
+  opacity: 1;
+  /* This transition handles the text fade */
+  transition: opacity 0.2s 0.1s ease;
+}
+
+/* * This is the magic. When collapsed, we just
+ * fade the text out. The padding and layout
+ * are already perfect.
+ */
+.collapsed .logoText,
+.collapsed .navText {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.1s ease, width 0.1s ease, margin 0.1s ease;
+  margin-left: 0; /* Remove margin when hidden */
+}
+
